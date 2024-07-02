@@ -1,5 +1,5 @@
 # **COMPUTER NETWORKING SIMULATOR**  
-Our project at NIT Srinagar in the course of Computer Networks. This simulator currently is capable of demonstrating the message transmission between different end devices in the domain of Data link layer. It shows exact simuation of the flow and access control protocols.
+The project Networking simulator GUI is from computer Networks. This simulator currently is capable of demonstrating the message transmission between different end devices in the domain of Data link layer. It shows exact simuation of the flow and access control protocols.
 
 
 https://user-images.githubusercontent.com/73434283/117675552-4a1f2f80-b1ca-11eb-9bd2-ff7b9f5e8d55.mp4
