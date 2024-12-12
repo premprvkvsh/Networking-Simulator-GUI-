@@ -6,6 +6,7 @@ export class Hub
             {
                 constructor()
                 {
+                    //some hub changes which needs to be modified
                     this.ports = ["-1", "-1", "-1", "-1", "-1", "-1"];
                     this.serial = C_hub + 99;
                     C_hub++;
