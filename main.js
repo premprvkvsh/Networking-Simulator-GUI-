@@ -73,7 +73,7 @@ function end_to_end()
     var check = make_connection_device_to_device(document.getElementById("dev_to_dev1").value, document.getElementById("dev_to_dev2").value);
     if(check == "invalid")
     {
-        alert("Invalid Entries");
+        alert("");
     }
 
     else if(check == "no port")
