@@ -5,6 +5,8 @@ import { create_switch, C_switch, Switch } from './Switch.js';
 import { make_connection_device_to_device, make_connection_hub_to_device, make_connection_switch_to_device, connect_device_to_left, connect_device_to_right, make_connection_hub_to_switch, switch_to_switch, reset } from './make_connections.js';
 import { remove_connection_bge_to_device, remove_connection_end_to_end, remove_connection_hub_to_end, remove_connection_hub_to_swt, remove_connection_switch_to_end } from './remove_connections.js';
 import { calculate_CD } from './Collision_domain(engine).js';
+import { predict_route, predict_loss } from './AI_predict.js';
+
 
 
 var b1 = document.getElementById("btn1");
