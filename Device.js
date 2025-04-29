@@ -29,7 +29,7 @@ export class End_device
                      // 🔥 Add these 2 lines (AI-related properties)
                        this.load = Math.floor(Math.random() * 100); // Load percentage from 0 to 100
                        this.success_rate = 0.9; // Success rate of packet delivery (90%)
-                       
+
                 }
 
                 get_ipaddress()
@@ -53,6 +53,17 @@ export class End_device
                     {
                         return 1;
                     }
+                }
+
+                get_load()
+                {
+                    return this.load;
+                }
+            
+                // (Optional) Add another for success rate
+                get_success_rate()
+                {
+                    return this.success_rate;
                 }
             }
 
