@@ -175,3 +175,18 @@ ok4.onclick = switch_to_switch_;
 ok5.onclick = show_collisions;
 
 document.getElementById("reset_button").onclick = reset_everything;
+
+//new changes
+document.getElementById("ai_predict_route").onclick = async function() {
+    let src = parseInt(document.getElementById("device1").value);
+    let dest = parseInt(document.getElementById("device2").value);
+    let result = await predict_route(src, dest);
+    document.getElementById("ai_output_route").innerText = "AI Predicted Best Route: " + result;
+};
+
+document.getElementById("ai_predict_loss").onclick = async function() {
+    let src = parseInt(document.getElementById("device1").value);
+    let dest = parseInt(document.getElementById("device2").value);
+    let result = await predict_loss(src, dest);
+    document.getElementById("ai_output_loss").innerText = "AI Predicted Packet Loss Probability: " + result;
+};
