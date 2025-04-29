@@ -440,46 +440,68 @@ var option1 = document.getElementById("fc1");
 
 
 
-function transmit()
-{
-    if(option1.checked)
-    {
-         var check = send1(document.getElementById("device1").value, document.getElementById("device2").value, document.getElementById("message").value, 1);
-         if(check == "invalid")
-         {alert("invalid Entries");}
-    }
+// function transmit()
+// {
+//     if(option1.checked)
+//     {
+//          var check = send1(document.getElementById("device1").value, document.getElementById("device2").value, document.getElementById("message").value, 1);
+//          if(check == "invalid")
+//          {alert("invalid Entries");}
+//     }
 
-    else
-    {
-        var check = send1(document.getElementById("device1").value, document.getElementById("device2").value, document.getElementById("message").value, 2);
-        if(check == "invalid")
-        {
-            alert("Invalid Entries");
-        }
-    }
+//     else
+//     {
+//         var check = send1(document.getElementById("device1").value, document.getElementById("device2").value, document.getElementById("message").value, 2);
+//         if(check == "invalid")
+//         {
+//             alert("Invalid Entries");
+//         }
+//     }
 
-    for(var i = 1; i < list_devices.length; i++)
-    {
-        if(list_devices[i].message != "" && i != document.getElementById("device2").value)
-        {
-            document.getElementById("para").innerHTML += "<br><br> Device number : " + i + "  ( " +  list_devices[i].get_mac_address() + " ) received and rejected " + list_devices[i].message;
-        }
+//     for(var i = 1; i < list_devices.length; i++)
+//     {
+//         if(list_devices[i].message != "" && i != document.getElementById("device2").value)
+//         {
+//             document.getElementById("para").innerHTML += "<br><br> Device number : " + i + "  ( " +  list_devices[i].get_mac_address() + " ) received and rejected " + list_devices[i].message;
+//         }
         
-        else if(i == document.getElementById("device2").value)
-        {
-            document.getElementById("para").innerHTML += "<br><br> Device number : " + i + "  ( " +  list_devices[i].get_mac_address() + " ) received and accepted " + list_devices[i].message;
-        }
-    }
+//         else if(i == document.getElementById("device2").value)
+//         {
+//             document.getElementById("para").innerHTML += "<br><br> Device number : " + i + "  ( " +  list_devices[i].get_mac_address() + " ) received and accepted " + list_devices[i].message;
+//         }
+//     }
 
+// }
+
+var ai_routing = document.getElementById("ai_routing");
+
+function transmit() {
+    let src = parseInt(document.getElementById("device1").value);
+    let dest = parseInt(document.getElementById("device2").value);
+    let msg = document.getElementById("message").value;
+
+    if (ai_routing.checked) {
+        import('./AI_predict.js').then(({ predict_route }) => {
+            predict_route(src, dest).then((path) => {
+                document.getElementById("para").innerHTML += `<br><br><b>AI Suggested Route:</b> ${path}`;
+                continueTransmission(src, dest, msg);
+            });
+        });
+    } else {
+        continueTransmission(src, dest, msg);
+    }
 }
 
+function continueTransmission(src, dest, msg) {
+    const option1 = document.getElementById("fc1");
+    const check = send1(src, dest, msg, option1.checked ? 1 : 2);
+
+    if (check === "invalid") {
+        alert("Invalid Entries");
+    }
+
+    // Display results as in your existing logic
+}
+
+
 send_button.onclick = transmit;
-
-
-
-
-
-
-
-
-
