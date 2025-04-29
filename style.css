@@ -258,3 +258,16 @@ body
 {
     font-family: 'Times New Roman', Times, serif;
 }
+#ai_predict_route, #ai_predict_loss {
+    background-color: darkorange;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 18px;
+    padding: 10px;
+}
+
+#ai_predict_route:hover, #ai_predict_loss:hover {
+    background-color: orangered;
+}
+
