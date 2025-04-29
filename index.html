@@ -10,8 +10,7 @@
         <h1 id = "demo"> Computer Networks Simulator </h1>
         <a href="Collision_domain.html"> <h3 style="float:inline-end; color: ivory; position: absolute;"> Collision domain Calculator </h3> </a>
 
-        
-        <div class = "options">
+            <div class = "options">
             <button type = "button" id = "btn1" class="btn"> Add a Device </button> 
             <button type = "button" id = "btn2" class="btn"> Add a hub </button>
             <button type = "button" class = "btn" id = "btn3"> Add a switch </button>
@@ -143,6 +142,10 @@
             <h3 style="margin-left: 7%; margin-top: 1%;"> Enter the message </h3>
             <input type = "text" class = "con" id = "message" style = "width: auto; margin-left: 7%;" placeholder="Enter message">
             <h3 style="margin-left: 7%; margin-top: 1%;"> Select the flow control Protocol </h3>
+            
+            <h3 style="margin-left: 7%; margin-top: 1%;"> Routing Mode </h3>
+            <input class="radio_button" type="checkbox" id="ai_routing"> Use AI Optimized Route
+
             <input class = "radio_button" type = "radio"  id = "fc1" name = "Protocol" checked value = "Stop and Wait">
             <label class = "fc_text" for = "Stop and Wait"> Stop and Wait ARQ </label><br>
             <input class = "radio_button" type = "radio" name = "Protocol" id = "fc2" value = "Selective Repeat">
@@ -160,14 +163,6 @@
             
         </div>
 
-        
-
-        
-
-        
-        
-
-        
         <script type = "module" src="./main.js"> </script>
     </body>
 </html>
