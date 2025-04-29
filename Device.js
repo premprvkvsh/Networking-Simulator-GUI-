@@ -25,6 +25,11 @@ export class End_device
                     this.mac_address = randomMac();
                     this.port = ["-1"];
                     this.message = "empty";
+
+                     // 🔥 Add these 2 lines (AI-related properties)
+                       this.load = Math.floor(Math.random() * 100); // Load percentage from 0 to 100
+                       this.success_rate = 0.9; // Success rate of packet delivery (90%)
+                       
                 }
 
                 get_ipaddress()
